@@ -15,7 +15,12 @@ class Droppable extends React.Component {
 
   render() {
     return (
-      <div id={this.props.id} onDrop={this.drop} onDragOver={this.allowDrop}>
+      <div 
+        id={this.props.id} 
+        className='droppable-item'
+        onDrop={this.drop} 
+        onDragOver={this.allowDrop}
+      >
         {this.props.children}
       </div>
     )
