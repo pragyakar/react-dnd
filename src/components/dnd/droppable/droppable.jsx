@@ -6,7 +6,11 @@ class Droppable extends React.Component {
   handleDrop = (e) => {
     e.preventDefault();
     const data = e.dataTransfer.getData('transfer');
-    e.target.appendChild(document.getElementById(data));
+    if (!!data) {
+      e.target.appendChild(document.getElementById(data));
+      console.log(data + " was moved to " + e.target.id);
+    }
+    // TODO: handle case where parameter is not a node type
   }
 
   allowDrop = (e) => {
