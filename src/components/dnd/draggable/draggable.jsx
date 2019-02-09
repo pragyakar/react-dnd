@@ -3,23 +3,23 @@ import PropTypes from 'prop-types';
 
 class Draggable extends React.Component {
 
-  drag = (e) => {
+  handleDrag = (e) => {
     e.dataTransfer.setData('transfer', e.target.id);
   }
 
-  dontAllowDrop = (e) => {
+  preventDrop = (e) => {
     e.stopPropagation();
   }
 
-   render() {
+  render() {
     return (
       <React.Fragment>
       <div 
         id={this.props.id} 
         className='draggable-item'
         draggable='true' 
-        onDragStart={this.drag} 
-        onDragOver={this.dontAllowDrop}
+        onDragStart={this.handleDrag} 
+        onDragOver={this.preventDrop}
       > 
         <div className="item">
           {this.props.children}

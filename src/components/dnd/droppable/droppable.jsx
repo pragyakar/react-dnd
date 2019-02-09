@@ -3,11 +3,10 @@ import PropTypes from 'prop-types';
 
 class Droppable extends React.Component {
 
-  drop = (e) => {
+  handleDrop = (e) => {
     e.preventDefault();
     const data = e.dataTransfer.getData('transfer');
     e.target.appendChild(document.getElementById(data));
-    // TODO: use id of parent node to set state of moved item
   }
 
   allowDrop = (e) => {
@@ -19,7 +18,7 @@ class Droppable extends React.Component {
       <div 
         id={this.props.id} 
         className='droppable-item'
-        onDrop={this.drop} 
+        onDrop={this.handleDrop} 
         onDragOver={this.allowDrop}
       >
       <div className="section-title">
