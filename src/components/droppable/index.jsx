@@ -1,3 +1,3 @@
-import Droppable from './Droppable';
+import Droppable from './droppable';
 
 export default Droppable;
