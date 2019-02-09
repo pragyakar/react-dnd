@@ -1,0 +1,19 @@
+.container {
+  width: 100%;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+}
+.item {
+  padding: 10px;
+  color: blue;
+  background-color: #fff;
+}
+
+.droppable-item {
+  background-color: green;
+  width: 250px;
+  min-height: 300px;
+  margin: 20px;
+}
+
