@@ -5,19 +5,52 @@ import Droppable from './droppable';
 
 class Dnd extends React.Component {
 
+  state = {
+    items : [
+      {
+        id: 'item-one',
+        title: 'Item 1', 
+        status: 'todo'
+      },
+      {
+        id: 'item-two',
+        title: 'Item 2', 
+        status: 'todo'
+      },
+      {
+        id: 'item-three',
+        title: 'Item 3', 
+        status: 'doing'
+      }
+    ]
+  }
+
   render() {
     return (
       <div className="wrapper">       
         <p className="title">Drag n Drop w/ React</p>
         <div className="container"> 
-          <Droppable id="container-one" boxTitle="Container 1">
-            <Draggable id="item-one">Item 1</Draggable>
-            <Draggable id="item-two">Item 2</Draggable>
+          <Droppable id="todo" boxTitle="TODO">
+            { 
+              this.state.items.map((item) => 
+                item.status === 'todo' && <Draggable id={item.id} key={item.id}>{item.title}</Draggable>   
+              )
+            }
           </Droppable>
-          <Droppable id="container-two" boxTitle="Container 2">
-            <Draggable id="item-three">Item 3</Draggable>
+          <Droppable id="doing" boxTitle="DOING">
+            { 
+              this.state.items.map((item) => 
+                item.status === 'doing' && <Draggable id={item.id} key={item.id}>{item.title}</Draggable>   
+              )
+            }
           </Droppable>
-          <Droppable id="container-three" boxTitle="Container 3"></Droppable>
+          <Droppable id="done" boxTitle="DONE">
+          { 
+            this.state.items.map((item) => 
+              item.status === 'done' && <Draggable id={item.id} key={item.id}>{item.title}</Draggable>   
+            )
+          }
+          </Droppable>
         </div>
       </div>
     )
