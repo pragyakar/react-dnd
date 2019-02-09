@@ -1,10 +1,10 @@
 import * as  React from 'react';
+import PropTypes from 'prop-types';
 
 class Draggable extends React.Component {
 
   drag = (e) => {
     e.dataTransfer.setData('transfer', e.target.id);
-
   }
 
   dontAllowDrop = (e) => {
@@ -18,6 +18,11 @@ class Draggable extends React.Component {
       </div>
     )
   }
+}
+
+Draggable.propTypes = {
+  id: PropTypes.string,
+  children: PropTypes.node
 }
 
 export default Draggable;

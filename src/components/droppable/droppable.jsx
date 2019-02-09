@@ -1,4 +1,5 @@
 import * as  React from 'react';
+import PropTypes from 'prop-types';
 
 class Droppable extends React.Component {
 
@@ -19,6 +20,11 @@ class Droppable extends React.Component {
       </div>
     )
   }
+}
+
+Droppable.propTypes = {
+  id: PropTypes.string,
+  children: PropTypes.node
 }
 
 export default Droppable;
