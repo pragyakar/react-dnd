@@ -7,7 +7,6 @@ class Dnd extends React.Component {
   render() {
     return (
       <div className="container">
-        {/* <h1>React DnD</h1> */}
         <Droppable id="dr1">
           <Draggable id="item1">Some Content 1</Draggable>
           <Draggable id="item2">Some Content 2</Draggable>
