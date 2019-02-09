@@ -3,6 +3,13 @@
   display: flex;
   justify-content: center;
 }
+
+.section-title {
+  color: #fff;
+  margin: 20px;
+  text-align: center;
+}
+
 .item {
   padding: 10px;
   color: blue;

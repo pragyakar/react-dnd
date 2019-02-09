@@ -21,6 +21,9 @@ class Droppable extends React.Component {
         onDrop={this.drop} 
         onDragOver={this.allowDrop}
       >
+      <div className="section-title">
+        {this.props.boxTitle}
+      </div>
         {this.props.children}
       </div>
     )
