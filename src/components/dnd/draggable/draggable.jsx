@@ -20,8 +20,7 @@ class Draggable extends React.Component {
         draggable='true' 
         onDragStart={this.drag} 
         onDragOver={this.dontAllowDrop}
-      >
-        
+      > 
         <div className="item">
           {this.props.children}
         </div>

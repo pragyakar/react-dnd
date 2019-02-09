@@ -7,6 +7,7 @@ class Droppable extends React.Component {
     e.preventDefault();
     const data = e.dataTransfer.getData('transfer');
     e.target.appendChild(document.getElementById(data));
+    // TODO: use id of parent node to set state of moved item
   }
 
   allowDrop = (e) => {
